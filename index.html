@@ -6,15 +6,29 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/wells_edits_main.css">
+    <!--<script type="text/javascript" src="https://apis.google.com/js/api.js"></script>
+    <script type="text/javascript">
+        init = function() {
+            s = new gapi.drive.share.ShareClient();
+            s.setOAuthToken('<OAUTH_TOKEN>');
+            s.setItemIds(['<FILE_ID>']);
+        }
+        window.onload = function() {
+            gapi.load('drive-share', init);
+        }
+    </script>-->
 </head>
 
-<body>
+<body class="main body_fonts backimg">
+
     <!-- Nav -->
     <nav class="navbar navbar-expand-lg fixed-top ">
         <a class="navbar-brand" href="#"><img src="images/mobile-logo.png"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">  
-        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
         </button>
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <ul class="navbar-nav mr-4">
@@ -31,27 +45,76 @@
             </ul>
         </div>
     </nav>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <div class="overlay"></div>
     <!-- Search Parameters -->
-    <section class="home-section section-hero bg-image" id="home-section">
+    <div class="search" id="search">
         <div class="container">
             <div class="row align-items-center justify-content-center">
-                <div class="col-md-12">
-                    <div class="mb-5 text-center">
-                        <h1 class="font-weight-bold">Mock Job Search Title</h1>
-                        <p>Mock Job Search Sub-Title></p>
+                <div class="col-xs-12 col-sm-6 col-lg-8 align-items-center justify-content-center">
+                    <div class="mb-5 text-center featjob">
+                        <h1>Featured Job</h1>
+                    </div>
+                    <div class="card">
+                        <div class="row card-body">
+                            <div class="col-sm-6">
+                                <h4 class="card-title">Job Title</h4>
+                                <h5>Company Name</h5>
+                                <h5>Job Type</h5>
+                                <h5>Location</h5>
+                            </div>
+                            <div class="col-sm-6 text-right">
+                                <img src="images/miamim.jpg" class="img-fluid featured">
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                                            Click To Apply
+                                          </button>
+                            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLongTitle">Job Category</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h2>Job Title</h2>
+                                            <h4>Company Name</h4>
+                                            <h5>Job Type</h5>
+                                            <h5>Location</h5>
+                                            <br>
+                                            <h6>Job Description:</h6>
+
+                                            <p>[Enter Text Here]
+                                            </p>
+                                            <br>
+                                            <h5>How to Apply:</h5>
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <!--<button onclick="s.showSettingsDialog()">Share</button>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-lg-4">
+                    <div class="mb-5 text-center jobsearch">
+                        <h1 class="font-weight-bold">Job Search</h1>
                     </div>
                     <form method="post" class="search-jobs-form">
-                        <div class="row mb-5">
-                            <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                        <div class="row mb-4">
+                            <div class="col-12">
                                 <input type="text" class="form-control form-control" placeholder="Job title, keywords...">
                             </div>
-                            <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-12">
                                 <select class="form-control">
                                     <option>Job Type</option>
                                     <option>Full Time</option>
@@ -61,7 +124,9 @@
                                     <option>Internship</option>            
                                 </select>
                             </div>
-                            <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-12">
                                 <select class="form-control">
                                     <option>Job Category</option>
                                     <option>Graphic Design</option>
@@ -76,7 +141,9 @@
                                     <option>Project Manager</option>
                                 </select>
                             </div>
-                            <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-12">
                                 <select class="form-control">
                                     <option>Job Location</option>  <option>Cincinnati</option>
                                     <option>Dayton</option>
@@ -87,8 +154,8 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="row mb-5">
-                            <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                        <div class="row mb-4">
+                            <div class="col-12">
                                 <select class="form-control">
                                         <option>Date Posted</option>  
                                         <option>1 Day</option>
@@ -98,38 +165,40 @@
                                         <option>3 Months</option>
                                     </select>
                             </div>
-                            <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-12">
                                 <button type="submit" class="btn btn-primary btn-block text-white btn-search"><span class="icon-search icon mr-2"></span>Search Job</button>
                             </div>
                         </div>
-                    </form>
                 </div>
+                </form>
             </div>
         </div>
-    </section>
-    <!-- Main -->
-    <div class="job">
-        <h1 class="text-center">Jobs</h1>
     </div>
+    <!-- Main -->
 
-    <div class="job backimg" id="job">
-        <div class="overlay"></div>
+
+    <div class="job" id="job">
+
         <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-lg-4 col-sm-12">
-                    <div class="card">
-                        <!--<div class="card-img">
-                            <img src="images/posts/polit.jpg" class="img-fluid">
-                        </div>-->
-                        <div class="card-body">
-                            <h4 class="card-title">Job Title</h4>
-                            <h5>Company Name</h5>
-                            <h5>Job Type</h5>
-                            <h5>Location</h5>
-                            <!--<p class="card-text">
+            <h1 class="text-center">Jobs</h1>
 
-                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>-->
+            <div class="row">
+
+                <div class="col-md-4 col-lg-4 col-sm-12">
+
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-6 card-body">
+                                <h4 class="card-title">Job Title</h4>
+                                <h5>Company Name</h5>
+                                <h5>Job Type</h5>
+                                <h5>Location</h5>
+                            </div>
+                            <div class="col-6 card-img">
+                                <img src="images/miamim.jpg" class="img-fluid">
+                            </div>
                         </div>
 
                         <div class="card-footer">
@@ -153,10 +222,7 @@
                                             <br>
                                             <h6>Job Description:</h6>
 
-                                            <p>proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est
-                                                laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit
-                                                anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia
-                                                deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa.accordion.
+                                            <p>[Enter Text Here]
                                             </p>
                                             <br>
                                             <h5>How to Apply:</h5>
@@ -174,18 +240,16 @@
                 </div>
                 <div class="col-md-4 col-lg-4 col-sm-12">
                     <div class="card">
-                        <!--<div class="card-img">
-                                <img src="images/posts/polit.jpg" class="img-fluid">
-                            </div>-->
-                        <div class="card-body">
-                            <h4 class="card-title">Job Title</h4>
-                            <h5>Company Name</h5>
-                            <h5>Job Type</h5>
-                            <h5>Location</h5>
-                            <!--<p class="card-text">
-    
-                                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                </p>-->
+                        <div class="row">
+                            <div class="col-6 card-body">
+                                <h4 class="card-title">Job Title</h4>
+                                <h5>Company Name</h5>
+                                <h5>Job Type</h5>
+                                <h5>Location</h5>
+                            </div>
+                            <div class="col-6 card-img">
+                                <img src="images/miamim.jpg" class="img-fluid">
+                            </div>
                         </div>
 
                         <div class="card-footer">
@@ -209,10 +273,7 @@
                                             <br>
                                             <h6>Job Description:</h6>
 
-                                            <p>proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est
-                                                laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit
-                                                anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia
-                                                deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa.accordion.
+                                            <p>[Enter Text Here]
                                             </p>
                                             <br>
                                             <h5>How to Apply:</h5>
@@ -230,18 +291,16 @@
                 </div>
                 <div class="col-md-4 col-lg-4 col-sm-12">
                     <div class="card">
-                        <!--<div class="card-img">
-                                    <img src="images/posts/polit.jpg" class="img-fluid">
-                                </div>-->
-                        <div class="card-body">
-                            <h4 class="card-title">Job Title</h4>
-                            <h5>Company Name</h5>
-                            <h5>Job Type</h5>
-                            <h5>Location</h5>
-                            <!--<p class="card-text">
-        
-                                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                    </p>-->
+                        <div class="row">
+                            <div class="col-6 card-body">
+                                <h4 class="card-title">Job Title</h4>
+                                <h5>Company Name</h5>
+                                <h5>Job Type</h5>
+                                <h5>Location</h5>
+                            </div>
+                            <div class="col-6 card-img">
+                                <img src="images/miamim.jpg" class="img-fluid">
+                            </div>
                         </div>
 
                         <div class="card-footer">
@@ -265,10 +324,7 @@
                                             <br>
                                             <h6>Job Description:</h6>
 
-                                            <p>proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est
-                                                laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit
-                                                anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia
-                                                deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa.accordion.
+                                            <p>[Enter Text Here]
                                             </p>
                                             <br>
                                             <h5>How to Apply:</h5>
@@ -283,904 +339,24 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-md-4 col-lg-4 col-sm-12">
-                    <div class="card">
-                        <!--<div class="card-img">
-                                <img src="images/posts/polit.jpg" class="img-fluid">
-                            </div>-->
-                        <div class="card-body">
-                            <h4 class="card-title">Job Title</h4>
-                            <h5>Company Name</h5>
-                            <h5>Job Type</h5>
-                            <h5>Location</h5>
-                            <!--<p class="card-text">
-    
-                                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                </p>-->
-                        </div>
-
-                        <div class="card-footer">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-                                            Click To Apply
-                                          </button>
-                            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLongTitle">Job Category</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <h2>Job Title</h2>
-                                            <h4>Company Name</h4>
-                                            <h5>Job Type</h5>
-                                            <h5>Location</h5>
-                                            <br>
-                                            <h6>Job Description:</h6>
-
-                                            <p>proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est
-                                                laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit
-                                                anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia
-                                                deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa.accordion.
-                                            </p>
-                                            <br>
-                                            <h5>How to Apply:</h5>
-
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Send To myMiami Email</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-4 col-sm-12">
-                    <div class="card">
-                        <!--<div class="card-img">
-                                    <img src="images/posts/polit.jpg" class="img-fluid">
-                                </div>-->
-                        <div class="card-body">
-                            <h4 class="card-title">Job Title</h4>
-                            <h5>Company Name</h5>
-                            <h5>Job Type</h5>
-                            <h5>Location</h5>
-                            <!--<p class="card-text">
-        
-                                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                    </p>-->
-                        </div>
-
-                        <div class="card-footer">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-                                                Click To Apply
-                                              </button>
-                            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLongTitle">Job Category</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <h2>Job Title</h2>
-                                            <h4>Company Name</h4>
-                                            <h5>Job Type</h5>
-                                            <h5>Location</h5>
-                                            <br>
-                                            <h6>Job Description:</h6>
-
-                                            <p>proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est
-                                                laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit
-                                                anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia
-                                                deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa.accordion.
-                                            </p>
-                                            <br>
-                                            <h5>How to Apply:</h5>
-
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Send To myMiami Email</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-4 col-sm-12">
-                    <div class="card">
-                        <!--<div class="card-img">
-                                        <img src="images/posts/polit.jpg" class="img-fluid">
-                                    </div>-->
-                        <div class="card-body">
-                            <h4 class="card-title">Job Title</h4>
-                            <h5>Company Name</h5>
-                            <h5>Job Type</h5>
-                            <h5>Location</h5>
-                            <!--<p class="card-text">
-            
-                                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                        </p>-->
-                        </div>
-
-                        <div class="card-footer">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-                                                    Click To Apply
-                                                  </button>
-                            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLongTitle">Job Category</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <h2>Job Title</h2>
-                                            <h4>Company Name</h4>
-                                            <h5>Job Type</h5>
-                                            <h5>Location</h5>
-                                            <br>
-                                            <h6>Job Description:</h6>
-
-                                            <p>proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est
-                                                laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit
-                                                anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia
-                                                deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa.accordion.
-                                            </p>
-                                            <br>
-                                            <h5>How to Apply:</h5>
-
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Send To myMiami Email</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-md-4 col-lg-4 col-sm-12">
-                    <div class="card">
-                        <!--<div class="card-img">
-                                    <img src="images/posts/polit.jpg" class="img-fluid">
-                                </div>-->
-                        <div class="card-body">
-                            <h4 class="card-title">Job Title</h4>
-                            <h5>Company Name</h5>
-                            <h5>Job Type</h5>
-                            <h5>Location</h5>
-                            <!--<p class="card-text">
-        
-                                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                    </p>-->
-                        </div>
-
-                        <div class="card-footer">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-                                                Click To Apply
-                                              </button>
-                            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLongTitle">Job Category</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <h2>Job Title</h2>
-                                            <h4>Company Name</h4>
-                                            <h5>Job Type</h5>
-                                            <h5>Location</h5>
-                                            <br>
-                                            <h6>Job Description:</h6>
-
-                                            <p>proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est
-                                                laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit
-                                                anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia
-                                                deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa.accordion.
-                                            </p>
-                                            <br>
-                                            <h5>How to Apply:</h5>
-
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Send To myMiami Email</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-4 col-sm-12">
-                    <div class="card">
-                        <!--<div class="card-img">
-                                        <img src="images/posts/polit.jpg" class="img-fluid">
-                                    </div>-->
-                        <div class="card-body">
-                            <h4 class="card-title">Job Title</h4>
-                            <h5>Company Name</h5>
-                            <h5>Job Type</h5>
-                            <h5>Location</h5>
-                            <!--<p class="card-text">
-            
-                                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                        </p>-->
-                        </div>
-
-                        <div class="card-footer">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-                                                    Click To Apply
-                                                  </button>
-                            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLongTitle">Job Category</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <h2>Job Title</h2>
-                                            <h4>Company Name</h4>
-                                            <h5>Job Type</h5>
-                                            <h5>Location</h5>
-                                            <br>
-                                            <h6>Job Description:</h6>
-
-                                            <p>proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est
-                                                laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit
-                                                anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia
-                                                deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa.accordion.
-                                            </p>
-                                            <br>
-                                            <h5>How to Apply:</h5>
-
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Send To myMiami Email</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-4 col-sm-12">
-                    <div class="card">
-                        <!--<div class="card-img">
-                                            <img src="images/posts/polit.jpg" class="img-fluid">
-                                        </div>-->
-                        <div class="card-body">
-                            <h4 class="card-title">Job Title</h4>
-                            <h5>Company Name</h5>
-                            <h5>Job Type</h5>
-                            <h5>Location</h5>
-                            <!--<p class="card-text">
-                
-                                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                            </p>-->
-                        </div>
-
-                        <div class="card-footer">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-                                                        Click To Apply
-                                                      </button>
-                            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLongTitle">Job Category</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <h2>Job Title</h2>
-                                            <h4>Company Name</h4>
-                                            <h5>Job Type</h5>
-                                            <h5>Location</h5>
-                                            <br>
-                                            <h6>Job Description:</h6>
-
-                                            <p>proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est
-                                                laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit
-                                                anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia
-                                                deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa.accordion.
-                                            </p>
-                                            <br>
-                                            <h5>How to Apply:</h5>
-
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Send To myMiami Email</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-md-4 col-lg-4 col-sm-12">
-                    <div class="card">
-                        <!--<div class="card-img">
-                                        <img src="images/posts/polit.jpg" class="img-fluid">
-                                    </div>-->
-                        <div class="card-body">
-                            <h4 class="card-title">Job Title</h4>
-                            <h5>Company Name</h5>
-                            <h5>Job Type</h5>
-                            <h5>Location</h5>
-                            <!--<p class="card-text">
-            
-                                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                        </p>-->
-                        </div>
-
-                        <div class="card-footer">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-                                                    Click To Apply
-                                                  </button>
-                            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLongTitle">Job Category</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <h2>Job Title</h2>
-                                            <h4>Company Name</h4>
-                                            <h5>Job Type</h5>
-                                            <h5>Location</h5>
-                                            <br>
-                                            <h6>Job Description:</h6>
-
-                                            <p>proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est
-                                                laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit
-                                                anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia
-                                                deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa.accordion.
-                                            </p>
-                                            <br>
-                                            <h5>How to Apply:</h5>
-
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Send To myMiami Email</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-4 col-sm-12">
-                    <div class="card">
-                        <!--<div class="card-img">
-                                            <img src="images/posts/polit.jpg" class="img-fluid">
-                                        </div>-->
-                        <div class="card-body">
-                            <h4 class="card-title">Job Title</h4>
-                            <h5>Company Name</h5>
-                            <h5>Job Type</h5>
-                            <h5>Location</h5>
-                            <!--<p class="card-text">
-                
-                                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                            </p>-->
-                        </div>
-
-                        <div class="card-footer">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-                                                        Click To Apply
-                                                      </button>
-                            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLongTitle">Job Category</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <h2>Job Title</h2>
-                                            <h4>Company Name</h4>
-                                            <h5>Job Type</h5>
-                                            <h5>Location</h5>
-                                            <br>
-                                            <h6>Job Description:</h6>
-
-                                            <p>proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est
-                                                laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit
-                                                anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia
-                                                deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa.accordion.
-                                            </p>
-                                            <br>
-                                            <h5>How to Apply:</h5>
-
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Send To myMiami Email</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-4 col-sm-12">
-                    <div class="card">
-                        <!--<div class="card-img">
-                                                <img src="images/posts/polit.jpg" class="img-fluid">
-                                            </div>-->
-                        <div class="card-body">
-                            <h4 class="card-title">Job Title</h4>
-                            <h5>Company Name</h5>
-                            <h5>Job Type</h5>
-                            <h5>Location</h5>
-                            <!--<p class="card-text">
-                    
-                                                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                                </p>-->
-                        </div>
-
-                        <div class="card-footer">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-                                                            Click To Apply
-                                                          </button>
-                            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLongTitle">Job Category</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                    <span aria-hidden="true">&times;</span>
-                                                                </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <h2>Job Title</h2>
-                                            <h4>Company Name</h4>
-                                            <h5>Job Type</h5>
-                                            <h5>Location</h5>
-                                            <br>
-                                            <h6>Job Description:</h6>
-
-                                            <p>proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est
-                                                laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit
-                                                anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia
-                                                deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa.accordion.
-                                            </p>
-                                            <br>
-                                            <h5>How to Apply:</h5>
-
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Send To myMiami Email</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-md-4 col-lg-4 col-sm-12">
-                    <div class="card">
-                        <!--<div class="card-img">
-                                            <img src="images/posts/polit.jpg" class="img-fluid">
-                                        </div>-->
-                        <div class="card-body">
-                            <h4 class="card-title">Job Title</h4>
-                            <h5>Company Name</h5>
-                            <h5>Job Type</h5>
-                            <h5>Location</h5>
-                            <!--<p class="card-text">
-                
-                                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                            </p>-->
-                        </div>
-
-                        <div class="card-footer">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-                                                        Click To Apply
-                                                      </button>
-                            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLongTitle">Job Category</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <h2>Job Title</h2>
-                                            <h4>Company Name</h4>
-                                            <h5>Job Type</h5>
-                                            <h5>Location</h5>
-                                            <br>
-                                            <h6>Job Description:</h6>
-
-                                            <p>proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est
-                                                laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit
-                                                anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia
-                                                deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa.accordion.
-                                            </p>
-                                            <br>
-                                            <h5>How to Apply:</h5>
-
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Send To myMiami Email</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-4 col-sm-12">
-                    <div class="card">
-                        <!--<div class="card-img">
-                                                <img src="images/posts/polit.jpg" class="img-fluid">
-                                            </div>-->
-                        <div class="card-body">
-                            <h4 class="card-title">Job Title</h4>
-                            <h5>Company Name</h5>
-                            <h5>Job Type</h5>
-                            <h5>Location</h5>
-                            <!--<p class="card-text">
-                    
-                                                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                                </p>-->
-                        </div>
-
-                        <div class="card-footer">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-                                                            Click To Apply
-                                                          </button>
-                            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLongTitle">Job Category</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                    <span aria-hidden="true">&times;</span>
-                                                                </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <h2>Job Title</h2>
-                                            <h4>Company Name</h4>
-                                            <h5>Job Type</h5>
-                                            <h5>Location</h5>
-                                            <br>
-                                            <h6>Job Description:</h6>
-
-                                            <p>proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est
-                                                laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit
-                                                anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia
-                                                deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa.accordion.
-                                            </p>
-                                            <br>
-                                            <h5>How to Apply:</h5>
-
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Send To myMiami Email</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-4 col-sm-12">
-                    <div class="card">
-                        <!--<div class="card-img">
-                                                    <img src="images/posts/polit.jpg" class="img-fluid">
-                                                </div>-->
-                        <div class="card-body">
-                            <h4 class="card-title">Job Title</h4>
-                            <h5>Company Name</h5>
-                            <h5>Job Type</h5>
-                            <h5>Location</h5>
-                            <!--<p class="card-text">
-                        
-                                                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                                    </p>-->
-                        </div>
-
-                        <div class="card-footer">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-                                                                Click To Apply
-                                                              </button>
-                            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLongTitle">Job Category</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <h2>Job Title</h2>
-                                            <h4>Company Name</h4>
-                                            <h5>Job Type</h5>
-                                            <h5>Location</h5>
-                                            <br>
-                                            <h6>Job Description:</h6>
-
-                                            <p>proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est
-                                                laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit
-                                                anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia
-                                                deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa.accordion.
-                                            </p>
-                                            <br>
-                                            <h5>How to Apply:</h5>
-
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Send To myMiami Email</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-md-4 col-lg-4 col-sm-12">
-                    <div class="card">
-                        <!--<div class="card-img">
-                                                <img src="images/posts/polit.jpg" class="img-fluid">
-                                            </div>-->
-                        <div class="card-body">
-                            <h4 class="card-title">Job Title</h4>
-                            <h5>Company Name</h5>
-                            <h5>Job Type</h5>
-                            <h5>Location</h5>
-                            <!--<p class="card-text">
-                    
-                                                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                                </p>-->
-                        </div>
-
-                        <div class="card-footer">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-                                                            Click To Apply
-                                                          </button>
-                            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLongTitle">Job Category</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                    <span aria-hidden="true">&times;</span>
-                                                                </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <h2>Job Title</h2>
-                                            <h4>Company Name</h4>
-                                            <h5>Job Type</h5>
-                                            <h5>Location</h5>
-                                            <br>
-                                            <h6>Job Description:</h6>
-
-                                            <p>proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est
-                                                laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit
-                                                anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia
-                                                deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa.accordion.
-                                            </p>
-                                            <br>
-                                            <h5>How to Apply:</h5>
-
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Send To myMiami Email</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-4 col-sm-12">
-                    <div class="card">
-                        <!--<div class="card-img">
-                                                    <img src="images/posts/polit.jpg" class="img-fluid">
-                                                </div>-->
-                        <div class="card-body">
-                            <h4 class="card-title">Job Title</h4>
-                            <h5>Company Name</h5>
-                            <h5>Job Type</h5>
-                            <h5>Location</h5>
-                            <!--<p class="card-text">
-                        
-                                                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                                    </p>-->
-                        </div>
-
-                        <div class="card-footer">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-                                                                Click To Apply
-                                                              </button>
-                            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLongTitle">Job Category</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <h2>Job Title</h2>
-                                            <h4>Company Name</h4>
-                                            <h5>Job Type</h5>
-                                            <h5>Location</h5>
-                                            <br>
-                                            <h6>Job Description:</h6>
-
-                                            <p>proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est
-                                                laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit
-                                                anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia
-                                                deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa.accordion.
-                                            </p>
-                                            <br>
-                                            <h5>How to Apply:</h5>
-
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Send To myMiami Email</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-4 col-sm-12">
-                    <div class="card">
-                        <!--<div class="card-img">
-                                                        <img src="images/posts/polit.jpg" class="img-fluid">
-                                                    </div>-->
-                        <div class="card-body">
-                            <h4 class="card-title">Job Title</h4>
-                            <h5>Company Name</h5>
-                            <h5>Job Type</h5>
-                            <h5>Location</h5>
-                            <!--<p class="card-text">
-                            
-                                                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                                        </p>-->
-                        </div>
-
-                        <div class="card-footer">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-                                                                    Click To Apply
-                                                                  </button>
-                            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLongTitle">Job Category</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                            <span aria-hidden="true">&times;</span>
-                                                                        </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <h2>Job Title</h2>
-                                            <h4>Company Name</h4>
-                                            <h5>Job Type</h5>
-                                            <h5>Location</h5>
-                                            <br>
-                                            <h6>Job Description:</h6>
-
-                                            <p>proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est
-                                                laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit
-                                                anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia
-                                                deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum. proident, sunt in culpa.accordion.
-                                            </p>
-                                            <br>
-                                            <h5>How to Apply:</h5>
-
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Send To myMiami Email</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br>
-        </div>
-    </div>
-    <!-- Footer -->
-    <footer class="page-footer font-small white pt-4">
-        <div class="container-fluid text-center text-md-left">
-            <div class="row">
-                <div class="col-md-6 mt-md-0 mt-3">
-                    <h5 class="text-uppercase">AIMS Internal Job Search Page</h5>
-                    <p>For any assistance or technical issues please contact Network Administrator.</p>
-                </div>
-                <hr class="clearfix w-100 d-md-none pb-3">
-                <div class="col-md-3 mb-md-0 mb-3">
-                    <h5 class="text-uppercase">Links</h5>
-                    <ul class="list-unstyled">
-                        <li class="linky">
-                            <a href="#!">AIMS</a>
-                        </li>
-                        <li class="linky">
-                            <a href="#!">Jobs</a>
-                        </li>
-                        <li class="linky">
-                            <a href="#!">Admin</a>
-                        </li>
-                        <li class="linky">
-                            <a href="#!">Contact</a>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>
-        <div class="footer-copyright text-center py-3">© 2019 Copyright:
-            <div class="linky">
-                <a href="#">IMS 422/522</a>
+
+        <!-- Footer -->
+        <footer class="page-footer fixed-bottom font-small">
+
+            <div class="footer-copyright text-center py-3">© 2019 Copyright:
+                <p>Contact AIMS Department With Any Issues</p>
             </div>
-        </div>
-    </footer>
+
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script type="text/javascript" src='js/script.js'></script>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script type="text/javascript" src='js/script.js'></script>
+
 
 </html>
